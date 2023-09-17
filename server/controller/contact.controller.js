@@ -36,7 +36,7 @@ const addNewContact = async (req, res, next) => {
     .catch((err) => {
       res
         .status(500)
-        .json("The Following error occured during insertion into DB\n", err);
+        .json(`The Following error occured during insertion into DB ${err}`);
     });
 };
 const updateContact = async (req, res) => {
@@ -68,21 +68,20 @@ const updateContact = async (req, res) => {
         res.status(200).json(`Contact updated successfully`);
       })
       .catch((err) => {
-        res.json("The Following error occured during updating into DB\n", err);
+        res.json(`The Following error occured during updating into DB ${err}`);
       });
   } else {
     res.status(304).json("No changes made to update contact");
   }
 };
 const deleteContact = async (req, res) => {
-  console.log(req.params["id"]);
   contactModel
     .findByIdAndDelete(req.params["id"])
     .then((response) => {
       res.status(200).json(`Contact deleted successfully`);
     })
     .catch((err) => {
-      res.json("The Following error occured during deleting in DB\n", err);
+      res.json(`The Following error occured during deleting in DB ${err}`);
     });
 };
 module.exports = {
