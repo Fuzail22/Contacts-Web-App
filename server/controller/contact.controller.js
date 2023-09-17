@@ -5,7 +5,6 @@ const getAllContacts = async (req, res) => {
   contactModel
     .find({})
     .then((response) => {
-      console.log(response);
       res.status(200).json(response);
     })
     .catch((err) => {
@@ -22,13 +21,13 @@ const getContact = async (req, res) => {
   let doc = await contactModel.findById(req.params["id"]);
   if (!doc) {
     res.status(404).json("No such _id exist to find");
+    return;
   } else {
     res.status(200).json(doc);
   }
 };
 const addNewContact = async (req, res, next) => {
   const contactData = req.body;
-  console.log(req.body);
   contactModel
     .create(contactData)
     .then((response) => {
@@ -45,6 +44,7 @@ const updateContact = async (req, res) => {
   let flag = false;
   if (!doc) {
     res.status(404).json("No such _id exist to update");
+    return;
   }
   if (doc.name != req.body.name) {
     doc.name = req.body.name;
