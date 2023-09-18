@@ -5,7 +5,15 @@ This contact management web application where users can store, update, delete an
 - Client consists of fronted code built using react js and set for continous deployment using github actions workflow.
 - Server consists of backend code built using express js and mongodb. Set for continous deployment using render.
 
-## Note
+# To deploy using git actions workflow
+
+- add workflow as in [deployclient.yml](https://github.com/Fuzail22/Browse_Stock_OHLCV/blob/main/.github/workflows/deployClient.yml). No changes needed if same folder structure is maintained.
+- add homepage attribute in package.json
+- add write permission in repository settings in general under actions section.
+- finally commit and push your changes or create a PR.
+- when you have you [gh-pages](https://github.com/Fuzail22/Contacts-Web-App/tree/gh-pages) branch built. Goto settings and change source to deploy from branch then select gh-pages.
+
+### Note
 
 -One of your dependencies, babel-preset-react-app, is importing the
 "@babel/plugin-proposal-private-property-in-object" package without
@@ -17,11 +25,3 @@ is not maintianed anymore. It is thus unlikely that this bug will
 ever be fixed. Add "@babel/plugin-proposal-private-property-in-object" to
 your devDependencies to work around this error. This will make this message
 go away.
-
-# To deploy using git actions workflow
-
-- add workflow as in [deployclient.yml](https://github.com/Fuzail22/Browse_Stock_OHLCV/blob/main/.github/workflows/deployClient.yml). No changes needed if same folder structure is maintained.
-- add homepage attribute in package.json
-- add write permission in repository settings in general under actions section.
-- finally commit and push your changes or create a PR.
-- when you have you [gh-pages](https://github.com/Fuzail22/Contacts-Web-App/tree/gh-pages) branch built. Goto settings and change source to deploy from branch then select gh-pages.
