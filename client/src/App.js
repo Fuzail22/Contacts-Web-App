@@ -16,6 +16,7 @@ import {
   BsXCircle,
   BsFillPersonVcardFill,
 } from "react-icons/bs";
+import DelayMSG from "./DelayMSG";
 
 function App() {
   const [contacts, setContacts] = useState([]);
@@ -128,6 +129,7 @@ function App() {
   return (
     <div className="App">
       {loading && <LoadingOverlay />}
+      {loading && <DelayMSG />}
       <div className="heading">
         <h1>
           Contact Management App
