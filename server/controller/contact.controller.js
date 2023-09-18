@@ -1,6 +1,6 @@
 const dbConnection = require("../config/mongoDB");
 const contactModel = require("../model/contact.model");
-
+const validation = require("../helper/validation");
 const getAllContacts = async (req, res) => {
   contactModel
     .find({})
@@ -26,8 +26,13 @@ const getContact = async (req, res) => {
     res.status(200).json(doc);
   }
 };
+
 const addNewContact = async (req, res, next) => {
   const contactData = req.body;
+  if (validation.hasEmptyStringValues(contactData)) {
+    res.send("Empty fields can't be added");
+    return;
+  }
   contactModel
     .create(contactData)
     .then((response) => {
@@ -40,6 +45,10 @@ const addNewContact = async (req, res, next) => {
     });
 };
 const updateContact = async (req, res) => {
+  if (validation.hasEmptyStringValues(req.body)) {
+    res.send("Empty fields can't be updated");
+    return;
+  }
   let doc = await contactModel.findById(req.params["id"]);
   let flag = false;
   if (!doc) {
