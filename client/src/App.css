@@ -81,7 +81,8 @@ td {
   text-align: left;
 }
 
-tbody tr:nth-child(odd) {
+tbody tr:nth-child(even),
+tbody tr:last-child {
   background-color: #f2f2f2;
 }
 
