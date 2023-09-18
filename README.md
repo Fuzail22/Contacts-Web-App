@@ -1,11 +1,15 @@
-This contact management web application where users can store, update, delete and view contacts. This is not only a full fledged application also, consists of backend which can supports api requests for other applications too.
+<h1 align="center">Contacts-Web-App</h1>
+
+<p align="center"> This contact management web application where users can search, store, update, delete and view contacts. This is not only a full fledged application also, consists of backend which can supports api requests for other applications too.
+  
+## live: https://fuzail22.github.io/Contacts-Web-App
 
 # Folder Structure
 
 - Client consists of fronted code built using react js and set for continous deployment using github actions workflow.
 - Server consists of backend code built using express js and mongodb. Set for continous deployment using render.
 
-# To deploy using git actions workflow
+# To deploy using GitHub actions workflow
 
 - add workflow as in [deployclient.yml](https://github.com/Fuzail22/Browse_Stock_OHLCV/blob/main/.github/workflows/deployClient.yml). No changes needed if same folder structure is maintained.
 - add homepage attribute in package.json
