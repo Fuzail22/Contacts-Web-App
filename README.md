@@ -1,6 +1,6 @@
 <h1 align="center">Contacts-Web-App</h1>
 
-<p align="center"> This contact management web application where users can search, store, update, delete and view contacts. This is not only a full fledged application also, consists of backend which can supports api requests for other applications too.
+<p align="center"> This is a contact management web application where users can search, store, update, delete and view contacts. This is not only a full fledged application also, consists of backend which can supports api requests for other applications too.
   
 ## live: https://fuzail22.github.io/Contacts-Web-App
 
