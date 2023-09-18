@@ -1,0 +1,1 @@
+This contact management web application where users can store, update, delete and view contacts. This is not only a full fledged application also, consists of backend which can supports api requests for other applications too.
